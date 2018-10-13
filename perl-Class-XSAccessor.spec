@@ -4,14 +4,14 @@
 #
 Name     : perl-Class-XSAccessor
 Version  : 1.19
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Summary  : 'Generate fast XS accessors without runtime compilation'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Class-XSAccessor-lib
-Requires: perl-Class-XSAccessor-man
+Requires: perl-Class-XSAccessor-lib = %{version}-%{release}
+BuildRequires : buildreq-cpan
 
 %description
 NAME
@@ -48,20 +48,22 @@ false => [ 'significant' ];
 
 # normal class code here.
 
+%package dev
+Summary: dev components for the perl-Class-XSAccessor package.
+Group: Development
+Requires: perl-Class-XSAccessor-lib = %{version}-%{release}
+Provides: perl-Class-XSAccessor-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-Class-XSAccessor package.
+
+
 %package lib
 Summary: lib components for the perl-Class-XSAccessor package.
 Group: Libraries
 
 %description lib
 lib components for the perl-Class-XSAccessor package.
-
-
-%package man
-Summary: man components for the perl-Class-XSAccessor package.
-Group: Default
-
-%description man
-man components for the perl-Class-XSAccessor package.
 
 
 %prep
@@ -90,9 +92,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -101,16 +103,16 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor/Array.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor/Heavy.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor/Array.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor/Heavy.pm
 
-%files lib
-%defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Class::XSAccessor.3
 /usr/share/man/man3/Class::XSAccessor::Array.3
 /usr/share/man/man3/Class::XSAccessor::Heavy.3
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so
