@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-XSAccessor
 Version  : 1.19
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Summary  : 'Generate fast XS accessors without runtime compilation'
@@ -103,9 +103,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor.pm
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor/Array.pm
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Class/XSAccessor/Heavy.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Class/XSAccessor.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Class/XSAccessor/Array.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Class/XSAccessor/Heavy.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -115,4 +115,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so
