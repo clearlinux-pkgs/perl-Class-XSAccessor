@@ -103,9 +103,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Class/XSAccessor.pm
-/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Class/XSAccessor/Array.pm
-/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Class/XSAccessor/Heavy.pm
+/usr/lib/perl5/vendor_perl/5.28.1x86_64-linux-thread-multi/Class/XSAccessor.pm
+/usr/lib/perl5/vendor_perl/5.28.1x86_64-linux-thread-multi/Class/XSAccessor/Array.pm
+/usr/lib/perl5/vendor_perl/5.28.1x86_64-linux-thread-multi/Class/XSAccessor/Heavy.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -115,4 +115,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so
+/usr/lib/perl5/vendor_perl/5.28.1x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so
