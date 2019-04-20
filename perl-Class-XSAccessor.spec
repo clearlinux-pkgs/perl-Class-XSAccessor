@@ -4,10 +4,10 @@
 #
 Name     : perl-Class-XSAccessor
 Version  : 1.19
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
-Summary  : 'Generate fast XS accessors without runtime compilation'
+Summary  : Generate fast XS accessors without runtime compilation
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Class-XSAccessor-lib = %{version}-%{release}
@@ -53,6 +53,7 @@ Summary: dev components for the perl-Class-XSAccessor package.
 Group: Development
 Requires: perl-Class-XSAccessor-lib = %{version}-%{release}
 Provides: perl-Class-XSAccessor-devel = %{version}-%{release}
+Requires: perl-Class-XSAccessor = %{version}-%{release}
 
 %description dev
 dev components for the perl-Class-XSAccessor package.
