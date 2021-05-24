@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-XSAccessor
 Version  : 1.19
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-1.19.tar.gz
 Summary  : 'Generate fast XS accessors without runtime compilation'
